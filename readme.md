@@ -21,9 +21,9 @@ vim : https://github.com/vim/vim-win32-installer/releases
 7. 64bitのVIMなら「mingw32-make -f make_mingw64.mak」を実行。32bitなら32bitのmak使う。
 8. コマンドプロンプトでvimを開き、「:call dein#update()」
 9. Windowsでは「$GIT_HOME\etc\bash.bashrc」に、以下を追加する。
-~~~bash
+```bash
 # System-wide bashrc file
 if [ -f ~/.bashrc ]; then
 . ~/.bashrc
 fi
-~~~
+```
