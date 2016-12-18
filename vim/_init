@@ -1,0 +1,48 @@
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=$REPO_VIM/repos/github.com/Shougo/dein.vim
+
+" Required:
+call dein#begin('$REPO_VIM')
+
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': {'windows': 'mingw32-make', 'linux':'make'}})
+call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('itchyny/lightline.vim')
+
+" Add or remove your plugins here:
+" call dein#add('Shougo/neosnippet.vim')
+" call dein#add('Shougo/neosnippet-snippets')
+
+" You can specify revision/branch/tag.
+" call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+
+call dein#end()
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" vimprocを最初にインストール
+if dein#check_install(['vimproc'])
+  call dein#install(['vimproc'])
+endif
+
+" 未インストールがあったらインストール
+if dein#check_install()
+  call dein#install()
+endif
+
+
+if has('win32')
+  let g:vimproc_dll_path = $REPO_VIM . '/repos/github.com/Shougo/vimproc.vim/lib/vimproc_win64.dll'
+elseif has('win64')
+  let g:vimproc_dll_path = $REPO_VIM . '/repos/github.com/Shougo/vimproc.vim/lib/vimproc_win64.dll'
+endif

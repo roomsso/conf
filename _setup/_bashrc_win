@@ -1,0 +1,4 @@
+alias ls='ls --show-control-chars'
+alias la='ls -a'
+alias vim='"$VIMHOME/vim.exe"'
+alias vi='vim'

@@ -1,0 +1,66 @@
+"----------------------------------------------
+"  基本設定
+"----------------------------------------------
+syntax on
+set nobackup             " バックアップ取らない  
+set noswapfile           " スワップファイル作らない
+set autoread             " 他で書き換えられた自動で読み直す
+set incsearch            " インクリメントサーチ
+set wrapscan             " 最後まで検索したら先頭に戻る
+set clipboard+=unnamed   " OSのクリップボードを使用
+set clipboard=unnamed    " ヤンクした文字は、システムのクリップボードへ
+set tabstop=2             "タブ表示幅
+set shiftwidth=4          "タブ挿入幅
+set history=200          " 履歴数
+" set encoding=utf-8       " 文字コード
+set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp
+" set fileformats=unix,dos,mac
+set fenc=utf-8
+
+"----------------------------------------------
+"   表示
+"----------------------------------------------
+" let g:hybrid_use_Xresources = 1
+" colorscheme hybrid    " カラーテーマ
+set shortmess+=I      " 起動時のスプラッシュ表示しない
+set number            " 行番号表示
+set showmatch         " 括弧の対応をハイライト
+set list              " 不可視文字表示
+set listchars=tab:^\  
+set shellslash        " Winでパス区切りに/を使えるように
+" set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set laststatus=2      " 末尾から2行目にステータスラインを常に表示
+
+"----------------------------------------------
+"   キーマップ
+"----------------------------------------------
+
+nmap <ESC><ESC> :nohlsearch<CR><ESC>
+
+"----------------------------------------------
+"   UNITE キーマップ
+"----------------------------------------------
+nnoremap [unite] <Nop>
+nmap 1 [unite]
+
+nnoremap <silent> [unite]1 :<C-u>Unite file_mru<CR>
+nnoremap <silent> [unite]2 :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]3 :<C-u>Unite<Space>bookmark<CR>
+nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> [unite]d :<C-u>Unite directory_mru<CR>
+
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()
+    nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
+endfunction
+
+" for proxy
+" let g:neobundle#types#git#default_protocol='https'
+
+"----------------------------------------------
+"  emmet
+"----------------------------------------------
+" source $HOME/.vim/bundle/webapi-vim/autoload/webapi/json.vim
+"let g:user_emmet_leader_key='<c-e>'
+"let g:user_emmet_settings=webapi#json#decode(join(readfile(expand('$HOME/dotfiles/_snippets_custom.json')), "\n"))
+
