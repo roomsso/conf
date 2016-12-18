@@ -3,14 +3,11 @@ https://github.com/roomsso/conf
 
 windows: C:\conf
 linux  : /var/lib/conf
-
-
-2. セットアップスクリプト実行。(それぞれソースコメント見てから）
+1. セットアップスクリプト実行。(それぞれソースコメント見てから）
 
 windows: _setup\win_setup.ps1
 linux  : _setup/linux_setup.sh
-
-3. GitBashで「_setup/dein_installer.sh $REPO_VIM」を実行。
+1. GitBashで「_setup/dein_installer.sh $REPO_VIM」を実行。
 ※C:\dev\vim\vim80、MinGWインストール済みであること。
 
 vim : https://github.com/vim/vim-win32-installer/releases
