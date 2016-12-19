@@ -1,12 +1,12 @@
 ###  1. 以下にclone。
 
 > windows: C:\conf
-> linux  : /var/lib/conf
+linux  : /var/lib/conf
 
 ###  2. セットアップスクリプト実行。(それぞれソースコメント見てから）
 
 > windows: _setup\win_setup.ps1
-> linux  : _setup/linux_setup.sh
+linux  : _setup/linux_setup.sh
 
 ###  3. GitBashで「_setup/dein_installer.sh $REPO_VIM」を実行。
 ※C:\dev\vim\vim80、MinGWインストール済みであること。
