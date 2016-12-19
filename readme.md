@@ -1,25 +1,27 @@
-###  1. ˆÈ‰º‚ÉcloneB
+###  1. ä»¥ä¸‹ã«cloneã€‚
 
+| OS | ãƒ‘ã‚¹ |
+|-----|-----|
 | windows | C:\conf |
-|---------|---------|
 | linux   | /var/lib/conf |
 
-###  2. ƒZƒbƒgƒAƒbƒvƒXƒNƒŠƒvƒgÀsB(‚»‚ê‚¼‚êƒ\[ƒXƒRƒƒ“ƒgŒ©‚Ä‚©‚çj
+###  2. ã‚»ãƒƒãƒˆã‚¢ãƒƒãƒ—ã‚¹ã‚¯ãƒªãƒ—ãƒˆå®Ÿè¡Œã€‚(ãã‚Œãã‚Œã‚½ãƒ¼ã‚¹ã‚³ãƒ¡ãƒ³ãƒˆè¦‹ã¦ã‹ã‚‰ï¼‰
 
-| windows | _setup\win_setup.ps1 |
+| OS | ã‚¹ã‚¯ãƒªãƒ—ãƒˆ |
 |---------|----------------------|
+| windows | _setup\win_setup.ps1 |
 | linux   | _setup/linux_setup.sh |
 
-###  3. GitBash‚Åu_setup/dein_installer.sh $REPO_VIMv‚ğÀsB
-¦VIM‚ğuC:\dev\vim\vim80v‚ÉƒCƒ“ƒXƒg[ƒ‹Ï‚İ‚Å‚ ‚é‚±‚ÆB
+###  3. GitBashã§ã€Œ_setup/dein_installer.sh $REPO_VIMã€ã‚’å®Ÿè¡Œã€‚
+â€»VIMã‚’ã€ŒC:\dev\vim\vim80ã€ã«ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«æ¸ˆã¿ã§ã‚ã‚‹ã“ã¨ã€‚
 
 > vim : https://github.com/vim/vim-win32-installer/releases
 
-###  4. ƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚Åvim‚ğŠJ‚­Bƒvƒ‰ƒOƒCƒ“ƒCƒ“ƒXƒg[ƒ‹n‚Ü‚èA‚¢‚ë‚¢‚ëclone‚³‚ê‚éB
-###  6. $REPO_VIM\repos\github.com\Shougo\vimproc.vim ‚ÉGitBash‚ÅˆÚ“®
-###  7. 64bit‚ÌVIM‚È‚çumingw32-make -f make_mingw64.makv‚ğÀsB32bit‚È‚ç32bit‚Ìmakg‚¤B
-###  8. ƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚Åvim‚ğŠJ‚«Au:call dein#update()v
-###  9. Windows‚Å‚Íu$GIT_HOME\etc\bash.bashrcv‚ÉAˆÈ‰º‚ğ’Ç‰Á‚·‚éB
+###  4. ã‚³ãƒãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§vimã‚’é–‹ãã€‚ãƒ—ãƒ©ã‚°ã‚¤ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«å§‹ã¾ã‚Šã€ã„ã‚ã„ã‚cloneã•ã‚Œã‚‹ã€‚
+###  6. $REPO_VIM\repos\github.com\Shougo\vimproc.vim ã«GitBashã§ç§»å‹•
+###  7. 64bitã®VIMãªã‚‰ã€Œmingw32-make -f make_mingw64.makã€ã‚’å®Ÿè¡Œã€‚32bitãªã‚‰32bitã®makä½¿ã†ã€‚
+###  8. ã‚³ãƒãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§vimã‚’é–‹ãã€ã€Œ:call dein#update()ã€
+###  9. Windowsã§ã¯ã€Œ$GIT_HOME\etc\bash.bashrcã€ã«ã€ä»¥ä¸‹ã‚’è¿½åŠ ã™ã‚‹ã€‚
 ```bash
 # System-wide bashrc file
 if [ -f ~/.bashrc ]; then
