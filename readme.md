@@ -21,6 +21,7 @@
 ###  5. Cコンパイル環境(Winの場合「MinGW」)があるなら以下実行。なければ「6.」へ。
 1. $REPO_VIM\repos\github.com\Shougo\vimproc.vim にGitBashで移動
 1. 以下、makeコマンド実行  
+
 | OS | コマンド |
 |---------|----------------------|
 | windows(x64) | mingw32-make -f make_mingw64.mak |
@@ -29,6 +30,7 @@
 
 ###  6. (「5.」が出来た場合は「7.」へ。) 以下実行。
 1. $REPO_VIM\repos\github.com\Shougo\vimproc.vim\lib に以下をコピー  
+
 | OS | ファイル |
 |---------|----------------------|
 | windows(x64) | vimproc_win64.dll |
