@@ -33,7 +33,7 @@
 
 | OS | ファイル |
 |---------|----------------------|
-| windows(x64) | vimproc_win64.dll |
+| windows(x64) | _setup\vimproc_win64.dll |
 | windows(x86) | なし |
 | linux   | なし |
 
