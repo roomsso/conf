@@ -9,10 +9,11 @@ set incsearch            " インクリメントサーチ
 set wrapscan             " 最後まで検索したら先頭に戻る
 set clipboard+=unnamed   " OSのクリップボードを使用
 set clipboard=unnamed    " ヤンクした文字は、システムのクリップボードへ
-set tabstop=2             "タブ表示幅
-set shiftwidth=4          "タブ挿入幅
+set tabstop=4            " タブ表示幅
+set shiftwidth=4         " タブ挿入幅
 set history=200          " 履歴数
-" set encoding=utf-8       " 文字コード
+set encoding=utf-8       " 文字コード
+set hidden               " 未保存のファイルがあっても別ファイル開ける
 set fileencodings=utf-8,sjis,iso-2022-jp,euc-jp
 " set fileformats=unix,dos,mac
 set fenc=utf-8
@@ -20,8 +21,7 @@ set fenc=utf-8
 "----------------------------------------------
 "   表示
 "----------------------------------------------
-" let g:hybrid_use_Xresources = 1
-" colorscheme hybrid    " カラーテーマ
+set hlsearch          " 検索文字列ハイライト
 set shortmess+=I      " 起動時のスプラッシュ表示しない
 set number            " 行番号表示
 set showmatch         " 括弧の対応をハイライト
@@ -36,26 +36,26 @@ set laststatus=2      " 末尾から2行目にステータスラインを常に�
 "----------------------------------------------
 
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
+nmap <S-F6> :bprevious<CR>
 
 "----------------------------------------------
-"   UNITE キーマップ
+"   denite キーマップ
 "----------------------------------------------
-nnoremap [unite] <Nop>
-nmap 1 [unite]
+nnoremap [denite] <Nop>
+nmap <C-u> [denite]
 
-nnoremap <silent> [unite]1 :<C-u>Unite file_mru<CR>
-nnoremap <silent> [unite]2 :<C-u>Unite buffer<CR>
-nnoremap <silent> [unite]3 :<C-u>Unite<Space>bookmark<CR>
-nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> [unite]d :<C-u>Unite directory_mru<CR>
+nnoremap <silent> [denite]<C-u> :<C-u>Denite file_mru<CR>
+nnoremap <silent> [denite]<C-g> :<C-u>Denite grep<CR>
+nnoremap <silent> [denite]<C-f> :<C-u>Denite file_rec<CR>
+nnoremap <silent> [denite]2 :<C-u>Denite buffer<CR>
+nnoremap <silent> [denite]3 :<C-u>Denite<Space>bookmark<CR>
+nnoremap <silent> [denite]f :<C-u>DeniteBufferDir -buffer-name=files file<CR>
+nnoremap <silent> [denite]d :<C-u>Denite directory_mru<CR>
 
-autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()
-    nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
-endfunction
-
-" for proxy
-" let g:neobundle#types#git#default_protocol='https'
+call denite#custom#var('file_rec', 'command', ['pt', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('grep', 'command', ['pt', '--nogroup', '--nocolor', '--smart-case'])
+call denite#custom#var('grep', 'default_opts', [])
+call denite#custom#var('grep', 'recursive_opts', [])
 
 "----------------------------------------------
 "  emmet

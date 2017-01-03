@@ -17,7 +17,7 @@ function setEnv($key, $val){
 
 #ディレクトリ作成
 function mkdirIfNonExists($path){
-    if( -! (Test-Path $path)) { mkdir $path }
+    if($path -and -! (Test-Path $path)) { mkdir $path }
 }
 
 setEnv "VIMHOME" "C:\dev\vim\vim80"
@@ -25,6 +25,7 @@ setEnv "CONF" "C:\conf"
 setEnv "CONF_VIM" "C:\conf\vim"
 setEnv "REPO" "C:\repo"
 setEnv "REPO_VIM" "C:\repo\vim"
+setEnv "ANACONDA" "C:\dev\Anaconda3"
 
 mkdirIfNonExists $env:CONF
 mkdirIfNonExists $env:CONF_VIM
