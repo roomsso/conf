@@ -22,6 +22,8 @@ set fenc=utf-8
 "   表示
 "----------------------------------------------
 set hlsearch          " 検索文字列ハイライト
+set cursorline        " カーソルライン有効化
+"highlight CursorLine  cterm=underline ctermbg=NONE
 set shortmess+=I      " 起動時のスプラッシュ表示しない
 set number            " 行番号表示
 set showmatch         " 括弧の対応をハイライト
@@ -31,11 +33,16 @@ set shellslash        " Winでパス区切りに/を使えるように
 " set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set laststatus=2      " 末尾から2行目にステータスラインを常に表示
 
+" if !has("gui_running")
+	" set t_Co=256
+" endif
+
 "----------------------------------------------
 "   キーマップ
 "----------------------------------------------
 
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
+nmap <F6>   :bnext<CR>
 nmap <S-F6> :bprevious<CR>
 
 "----------------------------------------------
@@ -56,6 +63,17 @@ call denite#custom#var('file_rec', 'command', ['pt', '--follow', '--nocolor', '-
 call denite#custom#var('grep', 'command', ['pt', '--nogroup', '--nocolor', '--smart-case'])
 call denite#custom#var('grep', 'default_opts', [])
 call denite#custom#var('grep', 'recursive_opts', [])
+
+"----------------------------------------------
+"   vimshell キーマップ
+"----------------------------------------------
+nnoremap   [vimshell] <Nop>
+nmap <C-q> [vimshell]
+
+nnoremap <silent> [vimshell]py  :VimShellInteractive python<CR><ESC><C-w><C-w>
+nnoremap <silent> [vimshell]l   <S-v>:VimShellSendString<CR>
+vmap     <silent> t             :VimShellSendString<CR>
+nnoremap <silent> [vimshell]e   :VimShellClose<CR>
 
 "----------------------------------------------
 "  emmet

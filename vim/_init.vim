@@ -20,6 +20,7 @@ call dein#add('Shougo/denite.nvim')
 call dein#add('itchyny/lightline.vim')
 call dein#add('rking/ag.vim')
 call dein#add('Shougo/vimshell.vim')
+call dein#add('Shougo/neocomplete.vim')
 call dein#add('simeji/winresizer')
 
 " Add or remove your plugins here:
